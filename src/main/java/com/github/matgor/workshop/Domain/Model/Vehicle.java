@@ -26,14 +26,14 @@ public class Vehicle {
     @NotNull @NotBlank
     private String model;
 
-    @NotNull @NotBlank
-    private Date yearOfProduction;
+    @NotNull
+    private Long yearOfProduction;
 
-    @NotNull @NotBlank
+    @NotNull
     private Long km;
 
-    @NotNull @NotBlank
-    private int capacity;
+    @NotNull
+    private Long capacity;
 
     @OneToMany(mappedBy = "vehicle")
     private List<Task> tasks = new ArrayList<>();

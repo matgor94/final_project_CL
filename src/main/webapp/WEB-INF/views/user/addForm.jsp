@@ -6,7 +6,7 @@
     <title>Dodaj użytkownika</title>
 </head>
 <body>
-<h1>Formularz dodawania książki:</h1>
+<h1>Formularz dodawania użytkownika:</h1>
 <form:form method="post" modelAttribute="user"></br>
     <form:input path="firstName" placeholder="Imię"/></br>
     <form:input path="lastName" placeholder="Nazwisko"/></br>
