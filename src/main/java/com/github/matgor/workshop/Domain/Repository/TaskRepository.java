@@ -1,14 +1,13 @@
 package com.github.matgor.workshop.Domain.Repository;
 
-import com.github.matgor.workshop.Domain.Model.Repair;
-import com.github.matgor.workshop.Domain.Model.User;
+import com.github.matgor.workshop.Domain.Model.Task;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
 @Repository
-public interface RepairRepository extends JpaRepository<Repair, Long> {
+public interface TaskRepository extends JpaRepository<Task, Long> {
     @Override
-    Optional<Repair> findById(Long id);
+    Optional<Task> findById(Long id);
 }

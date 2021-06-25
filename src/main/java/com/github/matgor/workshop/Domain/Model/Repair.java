@@ -15,16 +15,17 @@ public class Repair {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
+    /*@ManyToOne
     @JoinColumn(name = "mechanic_id")
     private Mechanic mechanic;
-
+*/
     @ManyToOne
     @JoinColumn(name = "vehicle_id")
     private Vehicle vehicle;
 
-    @ManyToOne
+    /*@ManyToOne
     @JoinColumn(name = "customer_id")
     private Customer customer;
+*/
 }
 
