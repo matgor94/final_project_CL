@@ -5,8 +5,7 @@ import lombok.*;
 import javax.persistence.*;
 
 @Entity(name = "repairs")
-@NoArgsConstructor
-@AllArgsConstructor
+@RequiredArgsConstructor
 @Setter
 @Getter
 @ToString(exclude = {"mechanic", "vehicle"})
@@ -14,16 +13,27 @@ public class Repair {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    private String vehicle;
+    private String task;
+    private String user;
+    
     /*@ManyToOne
     @JoinColumn(name = "mechanic_id")
     private Mechanic mechanic;
-*/
+
     @ManyToOne
-    @JoinColumn(name = "vehicle_id")
+    @JoinColumn(name = "vehicle")
     private Vehicle vehicle;
 
-    /*@ManyToOne
+    @OneToOne
+    @JoinColumn(name = "task")
+    private Task task;
+
+    @OneToOne
+    @JoinColumn(name = "user")
+    private User user;
+
+    @ManyToOne
     @JoinColumn(name = "customer_id")
     private Customer customer;
 */

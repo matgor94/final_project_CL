@@ -1,7 +1,6 @@
 package com.github.matgor.workshop.Domain.Service;
 
 import com.github.matgor.workshop.Domain.Model.Repair;
-import com.github.matgor.workshop.Domain.Model.User;
 import com.github.matgor.workshop.Domain.Repository.RepairRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;

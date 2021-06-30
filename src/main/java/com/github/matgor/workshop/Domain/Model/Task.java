@@ -6,7 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
+
 @Entity(name = "tasks")
 @NoArgsConstructor
 @AllArgsConstructor
@@ -18,10 +19,12 @@ public class Task {
     private Long id;
 
     @Column(name = "registration_date")
-    private LocalDateTime registrationDate;
+    private LocalDate registrationDate;
 
     @Column(name = "date_repair")
-    private LocalDateTime dateRepair;
+    private LocalDate dateRepair;
+
+    private String desctription;
 
     @ManyToOne
     private Vehicle vehicle;

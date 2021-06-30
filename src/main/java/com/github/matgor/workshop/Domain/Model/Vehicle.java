@@ -14,7 +14,6 @@ import java.util.List;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
 public class Vehicle {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,5 +36,4 @@ public class Vehicle {
 
     @OneToMany(mappedBy = "vehicle")
     private List<Task> tasks = new ArrayList<>();
-
 }
