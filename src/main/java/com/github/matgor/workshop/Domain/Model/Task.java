@@ -28,4 +28,5 @@ public class Task {
 
     @ManyToOne
     private Vehicle vehicle;
+
 }

@@ -12,7 +12,8 @@ import javax.validation.constraints.Size;
 @Entity(name = "users")
 @Setter
 @Getter
-@RequiredArgsConstructor
+@AllArgsConstructor
+@NoArgsConstructor
 @ToString
 public class User {
     @Id
@@ -29,8 +30,10 @@ public class User {
     private String email;
 
     @Column(name = "phone_number", unique = true)
-    private Long phoneNumber;
+    private int phoneNumber;
 
     @NotNull @NotBlank
     private String password;
+
+
 }

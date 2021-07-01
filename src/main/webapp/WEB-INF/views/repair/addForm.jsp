@@ -8,7 +8,7 @@
 <body>
 <h1>Formularz dodawania naprawy:</h1>
 <form:form method="post" modelAttribute="task"></br>
-    <form:select path="" placeholder="Data przyjęcia"/></br>
+    <form:input path="" placeholder="Data przyjęcia"/></br>
     <form:input path="dateRepair" placeholder="Termin naprawy"/></br>
     <form:textarea path="desctription" placeholder="Opis"/></br>
     <form:select path="vehicle" items="${vehicles}"/></br>
