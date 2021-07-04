@@ -2,6 +2,7 @@ package com.github.matgor.workshop.Controller;
 
 import com.github.matgor.workshop.Domain.Model.User;
 import com.github.matgor.workshop.Domain.Service.UserService;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -16,9 +17,12 @@ import javax.validation.Valid;
 @RequestMapping("/user")
 public class UserController {
     private final UserService userService;
+    private final PasswordEncoder passwordEncoder;
 
-    public UserController(UserService userService) {
+
+    public UserController(UserService userService, PasswordEncoder passwordEncoder) {
         this.userService = userService;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.GET)
@@ -32,8 +36,9 @@ public class UserController {
         if(bindingResult.hasErrors()){
             return "user/addForm";
         }
+        user.setRole("ROLE_USER");
         userService.addUser(user);
-        return "redirect:/user/all";
+        return "redirect:/login";
     }
 
     @GetMapping("/all")

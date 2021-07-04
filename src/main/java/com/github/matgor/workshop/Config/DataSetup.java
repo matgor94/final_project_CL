@@ -46,9 +46,9 @@ public class DataSetup {
             taskRepository.save(task1);
 
 
-            User user = new User(null, "Mateusz", "Górczyński", "maly316@vp.pl", 690858670, "haslo123");
+            User user = new User(null, "Mateusz", "Górczyński", "maly316@vp.pl", 690858670, "haslo123", "ROLE_USER");
             userRepository.save(user);
-            User user1 = new User(null, "Paulina", "Kozłowska", "kozojqa123@wp.pl", 574985663,"haslo321");
+            User user1 = new User(null, "Paulina", "Kozłowska", "kozojqa123@wp.pl", 574985663,"haslo321", "ROLE_USER");
             userRepository.save(user1);
 
             Repair repair = new Repair(null, BigDecimal.valueOf(519.99), BigDecimal.valueOf(200.00),vehicle, task, user, Status.DONE);

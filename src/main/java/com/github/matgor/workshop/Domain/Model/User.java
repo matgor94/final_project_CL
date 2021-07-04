@@ -35,5 +35,7 @@ public class User {
     @NotNull @NotBlank
     private String password;
 
+    private String role;
+
 
 }

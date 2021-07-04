@@ -3,6 +3,7 @@ package com.github.matgor.workshop.Domain.Service;
 import com.github.matgor.workshop.Domain.Model.User;
 import com.github.matgor.workshop.Domain.Repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -19,12 +20,17 @@ public class UserService {
     @PersistenceContext
     protected EntityManager entityManager;
     private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
 
-    public UserService(UserRepository userRepository) {
+    public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
+        this.passwordEncoder = passwordEncoder;
     }
 
     public User addUser(User user){
+        String encodedPassword = passwordEncoder.encode(user.getPassword());
+        user.setPassword(encodedPassword);
+        user.setRole("ROLE_USER");
         return userRepository.save(user);
     }
 

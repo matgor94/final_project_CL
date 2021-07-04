@@ -1,5 +1,6 @@
 package com.github.matgor.workshop.Config;
 
+import com.github.matgor.workshop.Domain.Model.User;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.LocaleContextResolver;
@@ -14,5 +15,10 @@ public class WebConfig {
         SessionLocaleResolver sessionLocaleResolver = new SessionLocaleResolver();
         sessionLocaleResolver.setDefaultLocale(new Locale("pl"));
         return sessionLocaleResolver;
+    }
+    @Bean(name = "user")
+    public User user(){
+        User user = new User();
+        return user;
     }
 }
