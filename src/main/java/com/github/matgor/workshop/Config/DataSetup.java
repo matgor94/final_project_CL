@@ -7,6 +7,7 @@ import com.github.matgor.workshop.Domain.Repository.UserRepository;
 import com.github.matgor.workshop.Domain.Repository.VehicleRepository;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.context.event.EventListener;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -20,12 +21,14 @@ public class DataSetup {
     private final UserRepository userRepository;
     private final TaskRepository taskRepository;
     private final RepairRepository repairRepository;
+    private final PasswordEncoder passwordEncoder;
 
-    public DataSetup(VehicleRepository vehicleRepository, UserRepository userRepository, TaskRepository taskRepository, RepairRepository repairRepository) {
+    public DataSetup(VehicleRepository vehicleRepository, UserRepository userRepository, TaskRepository taskRepository, RepairRepository repairRepository, PasswordEncoder passwordEncoder) {
         this.vehicleRepository = vehicleRepository;
         this.userRepository = userRepository;
         this.taskRepository = taskRepository;
         this.repairRepository = repairRepository;
+        this.passwordEncoder = passwordEncoder;
     }
     @EventListener
     @Transactional
@@ -45,10 +48,11 @@ public class DataSetup {
             Task task1 = new Task(null, regDate1, repairDate1, "Uszczelka pod głowica", vehicle1);
             taskRepository.save(task1);
 
-
-            User user = new User(null, "Mateusz", "Górczyński", "maly316@vp.pl", 690858670, "haslo123", "ROLE_USER");
+            String password = passwordEncoder.encode("haslo123");
+            User user = new User(null, "Mateusz", "Górczyński", "maly316@vp.pl", 690858670, password, "ROLE_USER");
             userRepository.save(user);
-            User user1 = new User(null, "Paulina", "Kozłowska", "kozojqa123@wp.pl", 574985663,"haslo321", "ROLE_USER");
+            String passowrd_2 = passwordEncoder.encode("haslo321");
+            User user1 = new User(null, "Paulina", "Kozłowska", "kozojqa123@wp.pl", 574985663,passowrd_2, "ROLE_USER");
             userRepository.save(user1);
 
             Repair repair = new Repair(null, BigDecimal.valueOf(519.99), BigDecimal.valueOf(200.00),vehicle, task, user, Status.DONE);

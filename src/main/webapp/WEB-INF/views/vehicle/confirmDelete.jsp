@@ -7,7 +7,7 @@
 </head>
 <body>
 <form method="post" action="">
-    <p>Czy usunąć pojazd ${vehicle.producent} ${vehicle.model}, id = ${vehicle.id})?</p>
+    <p>Czy usunąć pojazd ${vehicle.producent} ${vehicle.model})?</p>
     <p>
         <input type="hidden" name="id" value="${vehicle.id}"/>
         <a href="/vehicle/all"><button>Nie</button></a>

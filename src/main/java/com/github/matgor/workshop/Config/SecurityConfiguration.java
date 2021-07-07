@@ -36,6 +36,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .anyRequest().authenticated()
                     .and()
                 .formLogin()
+                    .defaultSuccessUrl("/task/all")
                     .and()
                 .csrf()
                     .disable();

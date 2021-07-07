@@ -7,7 +7,7 @@
 </head>
 <body>
 <form method="post" action="">
-    <p>Czy usunąć użytkownika ${user.firstName} ${user.lastName}, id = ${user.id})?</p>
+    <p>Czy usunąć użytkownika ${user.firstName} ${user.lastName})?</p>
     <p>
         <input type="hidden" name="id" value="${user.id}"/>
         <a href="/user/all"><button>Nie</button></a>
