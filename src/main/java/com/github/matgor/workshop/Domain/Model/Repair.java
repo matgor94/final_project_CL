@@ -24,19 +24,9 @@ public class Repair {
     private BigDecimal jobCost;
 
     @OneToOne
-    @JoinColumn(name = "vehicle_id")
-    private Vehicle vehicle;
-
-    @OneToOne
     @JoinColumn(name = "task_id")
     private Task task;
 
-    @OneToOne
-    @JoinColumn(name = "user_id")
-    private User user;
 
-
-    @NotNull @Enumerated(EnumType.STRING)
-    private Status status;
 }
 

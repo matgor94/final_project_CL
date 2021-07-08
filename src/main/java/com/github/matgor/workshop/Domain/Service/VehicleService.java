@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -34,7 +35,15 @@ public class VehicleService {
         return entityManager.find(Vehicle.class, id);
     }
     public List<Vehicle> getListOfVehicles(){
-        return vehicleRepository.findAll();
+         return vehicleRepository.findAll();
+    };
+    public List<String> getVehicleNames(){
+        List<String> vehicleNames = new ArrayList<>();
+        List<Vehicle> vehicles = vehicleRepository.findAll();
+        for(Vehicle vehicle : vehicles){
+            vehicleNames.add(vehicle.getProducent() + " " + vehicle.getModel());
+        }
+        return vehicleNames;
     };
 
     public Vehicle editVehicle(Vehicle user){

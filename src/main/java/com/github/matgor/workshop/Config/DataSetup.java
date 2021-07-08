@@ -39,9 +39,9 @@ public class DataSetup {
             Vehicle vehicle1 = new Vehicle(null, "BMW", "E60", 2006, 320000, 2800, null);
             vehicleRepository.save(vehicle1);
 
-            LocalDate regDate = LocalDate.of(2021, 05, 22);
+            LocalDate regDate = LocalDate.of(2021, 05, 20);
             LocalDate repairDate = LocalDate.of(2021, 05, 28);
-            Task task = new Task(null,regDate , repairDate, "Pompa wody + płyn chłodniczy", vehicle);
+            Task task = new Task(null, regDate , repairDate, "Pompa wody + płyn chłodniczy", vehicle);
             taskRepository.save(task);
             LocalDate regDate1 = LocalDate.of(2021, 06, 20);
             LocalDate repairDate1 = LocalDate.of(2021, 06, 30);
@@ -55,11 +55,10 @@ public class DataSetup {
             User user1 = new User(null, "Paulina", "Kozłowska", "kozojqa123@wp.pl", 574985663,passowrd_2, "ROLE_USER");
             userRepository.save(user1);
 
-            Repair repair = new Repair(null, BigDecimal.valueOf(519.99), BigDecimal.valueOf(200.00),vehicle, task, user, Status.DONE);
+            Repair repair = new Repair(null, BigDecimal.valueOf(519.99), BigDecimal.valueOf(200.00), task);
             repairRepository.save(repair);
-            Repair repair1 = new Repair(null,BigDecimal.valueOf(452.18), BigDecimal.valueOf(350.00), vehicle1, task1, user1, Status.DURING);
+            Repair repair1 = new Repair(null,BigDecimal.valueOf(452.18), BigDecimal.valueOf(350.00), task1);
             repairRepository.save(repair1);
-
         }
     }
 }

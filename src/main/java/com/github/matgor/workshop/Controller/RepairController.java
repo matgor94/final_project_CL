@@ -1,13 +1,20 @@
 package com.github.matgor.workshop.Controller;
 
 import com.github.matgor.workshop.Domain.Model.Repair;
+import com.github.matgor.workshop.Domain.Model.User;
 import com.github.matgor.workshop.Domain.Service.RepairService;
 import com.github.matgor.workshop.Domain.Service.TaskService;
 import com.github.matgor.workshop.Domain.Service.UserService;
 import com.github.matgor.workshop.Domain.Service.VehicleService;
 import org.springframework.stereotype.Controller;
 
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.validation.Valid;
 
 @Controller
 @RequestMapping("/repair")
@@ -25,13 +32,10 @@ public class RepairController {
         this.userService = userService;
     }
 
-    /*@GetMapping("/all")
-    public String showAllRepair(Model model, Long id){
-        Repair repair = new Repair(vehicleService.getVehicle(id).getModel(), taskService.getTask(id).g, userService.getUser(id));
-    }
-   @GetMapping("/add")
-    public String prepareAddRepair(Model model){
+    @GetMapping("/add")
+    public String prepareAddRepair(Model model, Long id){
         model.addAttribute("repair", new Repair());
+        model.addAttribute("task", taskService.getListOfTasks());
         return "repair/addForm";
     }
 
@@ -47,6 +51,35 @@ public class RepairController {
     @GetMapping("/all")
     public String showAllTask(Model model){
         model.addAttribute("repairList", repairService.getListOfRepairs());
+        model.addAttribute("task", taskService.getListOfTasks());
         return "repair/allRepairs";
-    }*/
+    }
+
+    @GetMapping("/edit")
+    public String preprareEditRepair(Long id, Model model){
+        model.addAttribute("repair", repairService.getRepair(id));
+        return "repair/editForm";
+    }
+
+    @PostMapping("/edit")
+    public String processEditRepair(@Valid Repair repair, BindingResult bindingResult){
+        if(bindingResult.hasErrors()){
+            return "repair/editForm";
+        }
+        repairService.addRepair(repair);
+        return "redirect:/repair/all";
+    }
+
+    @GetMapping("/delete")
+    public String prepareDeleteRepair(Long id, Model model){
+        model.addAttribute("repair", repairService.getRepair(id));
+        return "repair/confirmDelete";
+        }
+
+    @PostMapping("/delete")
+    public String processDeleteRepair(Long id){
+        Repair repair = repairService.getRepair(id);
+        repairService.deleteRepair(repair);
+        return "redirect:/repair/all";
+    }
 }

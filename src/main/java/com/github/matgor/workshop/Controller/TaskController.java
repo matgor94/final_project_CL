@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.validation.Valid;
+import java.time.LocalDate;
 
 @Controller
 @RequestMapping("/task")
@@ -28,6 +29,7 @@ public class TaskController {
     public String prepareAddTask(Model model){
         model.addAttribute("task", new Task());
         model.addAttribute("vehicles", vehicleService.getListOfVehicles());
+        model.addAttribute("vehicleNames", vehicleService.getVehicleNames());
         return "task/addForm";
     }
 

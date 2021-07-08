@@ -8,10 +8,10 @@
 <body>
 <h1>Formularz dodawania zlecenia naprawy:</h1>
 <form:form method="post" modelAttribute="task"></br>
-    <form:input type="date" path="registrationDate"  placeholder="Data przyjęcia"/></br>
-    <form:input type="date" path="dateRepair" placeholder="Termin naprawy"/></br>
-    <form:textarea path="desctription" placeholder="Opis"/></br>
-    <form:select path="vehicle" items="${vehicles}"/></br>
+    <form:input path="registrationDate"  placeholder="Data przyjęcia"/></br>
+    <form:input path="dateRepair" placeholder="Termin naprawy"/></br>
+    <form:textarea path="desctription" placeholder="Opis zlecenia"/></br>
+    <form:select path="vehicle" items="${vehicles}" placeholder="Pojazd"/></br>
 <input type="submit" value="Dodaj zlecenie">
 </form:form>
 </body>

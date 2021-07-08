@@ -69,7 +69,7 @@ public class UserController {
         return "user/confirmDelete";
     }
 
-    @PostMapping("delete")
+    @PostMapping("/delete")
     public String processDeleteUser(Long id){
         User user = userService.getUser(id);
         userService.deleteUser(user);

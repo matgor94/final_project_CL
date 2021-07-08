@@ -7,12 +7,11 @@
 </head>
 <body>
 <h1>Formularz dodawania naprawy:</h1>
-<form:form method="post" modelAttribute="task"></br>
-    <form:input path="" placeholder="Data przyjęcia"/></br>
-    <form:input path="dateRepair" placeholder="Termin naprawy"/></br>
-    <form:textarea path="desctription" placeholder="Opis"/></br>
-    <form:select path="vehicle" items="${vehicles}"/></br>
-<input type="submit" value="Dodaj zlecenie">
+<form:form method="post" modelAttribute="repair"></br>
+    <form:input path="partsCost" placeholder="Koszt części"/>
+    <form:input path="jobCost" placeholder="Koszt robocizny"/>
+    <form:select path="task" items="${task}" placeholder="Zlecene"/>
+<input type="submit" value="Dodaj naprawę">
 </form:form>
 </body>
 </html>
