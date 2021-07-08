@@ -8,7 +8,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.stereotype.Service;
+
 
 @Configuration
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
@@ -25,13 +25,22 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/user/add").permitAll()
+                .antMatchers("/user/addUser").permitAll()
+                .antMatchers("/user/addEmployee").permitAll()
+                .antMatchers("/user/addAdmin").permitAll()
+                .antMatchers("/registartion").permitAll()
                 .antMatchers("login").permitAll()
                 .antMatchers("/").permitAll()
                 .antMatchers("/user/edit", "/user/delete", "/user/all",
                         "/vehicle/add", "/vehicle/edit", "/vehicle/delete", "/vehicle/all",
                         "/task/add", "/task/all", "/task/edit", "/task/delete",
-                        "/repair/add", "/repair/all", "/repair/edit", "/repair/delete").hasRole("USER")
+                        "/repair/add", "/repair/all", "/repair/edit", "/repair/delete").hasRole("ADMIN")
+                .antMatchers("/user/edit", "/user/delete",
+                "/vehicle/add", "/vehicle/edit", "/vehicle/delete",
+                "/task/add", "/task/edit", "/task/delete").hasRole("USER")
+                .antMatchers(  "/vehicle/add", "/vehicle/edit", "/vehicle/delete", "/vehicle/all",
+                        "/task/add", "/task/all", "/task/edit", "/task/delete",
+                        "/repair/add", "/repair/all", "/repair/edit", "/repair/delete").hasRole("EMPLOYEE")
                 .antMatchers("/*").permitAll()
                 .anyRequest().authenticated()
                     .and()

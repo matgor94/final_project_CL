@@ -3,10 +3,10 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
-    <title>Dodaj użytkownika</title>
+    <title>Rejestracja</title>
 </head>
 <body>
-<h1>Formularz dodawania użytkownika:</h1>
+<h1>Formualarz rejestracji:</h1>
 <form:form method="post" modelAttribute="user"></br>
     <form:input path="firstName" placeholder="Imię"/></br>
     <form:input path="lastName" placeholder="Nazwisko"/></br>

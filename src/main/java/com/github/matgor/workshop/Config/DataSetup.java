@@ -49,11 +49,14 @@ public class DataSetup {
             taskRepository.save(task1);
 
             String password = passwordEncoder.encode("haslo123");
-            User user = new User(null, "Mateusz", "Górczyński", "maly316@vp.pl", 690858670, password, "ROLE_USER");
+            User user = new User(null, "Mateusz", "Górczyński", "maly316@vp.pl", 690858670, password, "ROLE_ADMIN");
             userRepository.save(user);
             String passowrd_2 = passwordEncoder.encode("haslo321");
+            String password_3 = passwordEncoder.encode("kowalski123");
             User user1 = new User(null, "Paulina", "Kozłowska", "kozojqa123@wp.pl", 574985663,passowrd_2, "ROLE_USER");
             userRepository.save(user1);
+            User user2 = new User(null, "Czarek", "Kowalski", "kowalski123@o2.pl", 500214254, password_3, "ROLE_EMPLOYEE");
+            userRepository.save(user2);
 
             Repair repair = new Repair(null, BigDecimal.valueOf(519.99), BigDecimal.valueOf(200.00), task);
             repairRepository.save(repair);
