@@ -31,17 +31,12 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/registartion").permitAll()
                 .antMatchers("login").permitAll()
                 .antMatchers("/").permitAll()
-                .antMatchers("/user/edit", "/user/delete", "/user/all",
-                        "/vehicle/add", "/vehicle/edit", "/vehicle/delete", "/vehicle/all",
-                        "/task/add", "/task/all", "/task/edit", "/task/delete",
-                        "/repair/add", "/repair/all", "/repair/edit", "/repair/delete").hasRole("ADMIN")
-                .antMatchers("/user/edit", "/user/delete",
-                "/vehicle/add", "/vehicle/edit", "/vehicle/delete",
-                "/task/add", "/task/edit", "/task/delete").hasRole("USER")
-                .antMatchers(  "/vehicle/add", "/vehicle/edit", "/vehicle/delete", "/vehicle/all",
-                        "/task/add", "/task/all", "/task/edit", "/task/delete",
-                        "/repair/add", "/repair/all", "/repair/edit", "/repair/delete").hasRole("EMPLOYEE")
-                .antMatchers("/*").permitAll()
+                .antMatchers("/user/edit","/user/delete",
+                        "/vehicle/add", "/vehicle/edit", "/vehicle/delete"
+                        ).hasAnyRole("ADMIN", "USER", "EMPLOYEE")
+                .antMatchers(  "/task/add", "/task/delete", "/task/edit").hasAnyRole("ADMIN", "USER")
+                .antMatchers("/vehicle/all", "/user/all", "/task/all", "/repair/all").hasRole("ADMIN")
+                .antMatchers("/repair/all", "/repair/add", "/repair/delete", "/repair/edit").hasAnyRole("ADMIN", "EMPLOYEE")
                 .anyRequest().authenticated()
                     .and()
                 .formLogin()
