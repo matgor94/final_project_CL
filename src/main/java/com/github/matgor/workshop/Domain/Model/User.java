@@ -29,6 +29,7 @@ public class User {
     @Email @NotNull @Column(unique = true)
     private String email;
 
+    //TODO String a nie int
     @Column(name = "phone_number", unique = true)
     private int phoneNumber;
 

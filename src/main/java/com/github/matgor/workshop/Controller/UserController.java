@@ -70,6 +70,8 @@ public class UserController {
         if(bindingResult.hasErrors()){
             return "user/addForm";
         }
+        //TODO Nadawanie ról powinno być w serwisach i ogólnie to serwisy powinny być inteligentne
+        //     a kontrolery całkiem głupie
         user.setRole("ROLE_ADMIN");
         userService.addUser(user);
         return "redirect:/login";

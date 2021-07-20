@@ -11,13 +11,16 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @Setter
 @Getter
+//TODO Nie ma tutaj takich pól
 @ToString(exclude = {"mechanic", "vehicle", "user"})
 public class Repair {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+
+    //TODO Obowiązkowe scale/precision
     @NotNull
+    @Column(precision = 7, scale = 2)
     private BigDecimal partsCost;
     
     @NotNull

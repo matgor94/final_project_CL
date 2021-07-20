@@ -11,7 +11,7 @@
     <form:input path="registrationDate"  placeholder="Data przyjęcia"/></br>
     <form:input path="dateRepair" placeholder="Termin naprawy"/></br>
     <form:textarea path="desctription" placeholder="Opis zlecenia"/></br>
-    <form:select path="vehicle" items="${vehicles}" placeholder="Pojazd"/></br>
+    <form:select path="vehicle" items="${vehicles}" placeholder="Pojazd" itemValue="id" itemLabel="model"/></br>
 <input type="submit" value="Dodaj zlecenie">
 </form:form>
 </body>

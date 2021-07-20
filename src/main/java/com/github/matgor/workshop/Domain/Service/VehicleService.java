@@ -37,6 +37,7 @@ public class VehicleService {
     public List<Vehicle> getListOfVehicles(){
          return vehicleRepository.findAll();
     };
+    //TODO Do tego można użyć query, aby pobrać od razu same nazwy, bez wyciągania wszystkich danych z bazy
     public List<String> getVehicleNames(){
         List<String> vehicleNames = new ArrayList<>();
         List<Vehicle> vehicles = vehicleRepository.findAll();

@@ -7,8 +7,11 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
+//TODO Nie oznaczamy też interfejsów tymi adnotacjami, bo interfejs nie może być komponentem
 @Repository
 public interface RepairRepository extends JpaRepository<Repair, Long> {
+
+    //TODO Nie nadpisujemy istniejących metod, nie ma to sensu
     @Override
     Optional<Repair> findById(Long id);
 }

@@ -31,6 +31,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/registartion").permitAll()
                 .antMatchers("login").permitAll()
                 .antMatchers("/").permitAll()
+                //TODO Ta konfiguracja nie wydaję się być poprawna :)
                 .antMatchers("/user/edit","/user/delete",
                         "/vehicle/add", "/vehicle/edit", "/vehicle/delete"
                         ).hasAnyRole("ADMIN", "USER", "EMPLOYEE")

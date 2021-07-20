@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -19,6 +20,10 @@ public class Task {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    //TODO  Wykorzystać @DateTimeFormat do kontroli formatu daty/czasu
+    //      Domyślny format w HTTP: yyyy-MM-dd
+    //      Domyślny format LocalDate: dd.mm.yyyy
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "registration_date")
     private LocalDate registrationDate;
 

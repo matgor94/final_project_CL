@@ -28,6 +28,7 @@ public class RepairService {
         return repairRepository.save(repair);
     }
 
+    //TODO Albo repozytoria albo entityManager, nie jedno i drugie
     public Repair getRepair(Long id){
         return entityManager.find(Repair.class, id);
     }

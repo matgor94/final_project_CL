@@ -18,10 +18,12 @@ import javax.validation.Valid;
 
 @Controller
 @RequestMapping("/repair")
+//TODO Jeden kontroler do jedengo widoku, nie do encji
 public class RepairController {
 
     private final RepairService repairService;
     private final TaskService taskService;
+    //TODO Uzuwać nieużywane zależności
     private final VehicleService vehicleService;
     private final UserService userService;
 
