@@ -10,7 +10,7 @@
 <form:form method="post" modelAttribute="repair"></br>
     <form:input path="partsCost" placeholder="Koszt części"/>
     <form:input path="jobCost" placeholder="Koszt robocizny"/>
-    <form:select path="task" items="${task}" placeholder="Zlecene"/>
+    <form:select path="task" items="${task}"  placeholder="Zlecene"/>
 <input type="submit" value="Dodaj naprawę">
 </form:form>
 </body>

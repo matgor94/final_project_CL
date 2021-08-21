@@ -1,7 +1,6 @@
 package com.github.matgor.workshop.Controller;
 
 import com.github.matgor.workshop.Domain.Model.Repair;
-import com.github.matgor.workshop.Domain.Model.User;
 import com.github.matgor.workshop.Domain.Service.RepairService;
 import com.github.matgor.workshop.Domain.Service.TaskService;
 import com.github.matgor.workshop.Domain.Service.UserService;
@@ -15,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.validation.Valid;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/repair")

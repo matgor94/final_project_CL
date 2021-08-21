@@ -11,16 +11,15 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @Setter
 @Getter
-@ToString(exclude = {"mechanic", "vehicle", "user"})
 public class Repair {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    @NotNull
+    @NotNull @Column(precision = 7, scale = 2)
     private BigDecimal partsCost;
     
-    @NotNull
+    @NotNull @Column(precision = 7, scale = 2)
     private BigDecimal jobCost;
 
     @OneToOne

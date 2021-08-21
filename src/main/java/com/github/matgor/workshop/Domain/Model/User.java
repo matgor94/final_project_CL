@@ -30,7 +30,7 @@ public class User {
     private String email;
 
     @Column(name = "phone_number", unique = true)
-    private int phoneNumber;
+    private String phoneNumber;
 
     @NotNull @NotBlank
     private String password;

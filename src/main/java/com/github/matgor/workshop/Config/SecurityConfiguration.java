@@ -35,7 +35,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                         "/vehicle/add", "/vehicle/edit", "/vehicle/delete"
                         ).hasAnyRole("ADMIN", "USER", "EMPLOYEE")
                 .antMatchers(  "/task/add", "/task/delete", "/task/edit").hasAnyRole("ADMIN", "USER")
-                .antMatchers("/vehicle/all", "/user/all", "/task/all", "/repair/all").hasRole("ADMIN")
+                .antMatchers("/vehicle/all", "/user/all", "/repair/all").hasRole("ADMIN")
                 .antMatchers("/repair/all", "/repair/add", "/repair/delete", "/repair/edit").hasAnyRole("ADMIN", "EMPLOYEE")
                 .anyRequest().authenticated()
                     .and()
