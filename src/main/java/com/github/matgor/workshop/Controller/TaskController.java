@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.validation.Valid;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 @Controller
 @RequestMapping("/task")
@@ -24,6 +26,7 @@ public class TaskController {
         this.taskService = taskService;
         this.vehicleService = vehicleService;
     }
+
 
     @RequestMapping(value = "/add", method = RequestMethod.GET)
     public String prepareAddTask(Model model){
@@ -45,6 +48,8 @@ public class TaskController {
     @GetMapping("/all")
     public String showAllTask(Model model){
         model.addAttribute("taskList", taskService.getListOfTasks());
+        String time = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+        model.addAttribute("time", time);
         return "task/allTask";
     }
 

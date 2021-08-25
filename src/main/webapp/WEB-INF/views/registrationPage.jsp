@@ -13,8 +13,5 @@
 <h3>Pracownik</h3>
 <a href="/user/addEmployee"><button>Dodaj pracownika</button></a>
 <br>
-<h3>Admin</h3>
-<a href="/user/addAdmin"><button>Dodaj admina</button></a>
-<br>
 </body>
 </html>

@@ -1,65 +1,9 @@
-<%--<%@ page contentType="text/html;charset=UTF-8" %>--%>
-<%--<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>--%>
-<%--<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>--%>
-<%--<html>--%>
-<%--<head>--%>
-<%--    <title>Zlecenia</title>--%>
-<%--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">--%>
-<%--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>--%>
-<%--    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>--%>
-<%--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>--%>
-
-<%--</head>--%>
-<%--<body>--%>
-
-<%--<header class="navbar navbar-blue sticky-top bg-dark flex-md-nowrap p-0 shadow">--%>
-<%--    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Automotive workshop</a>--%>
-<%--    <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">--%>
-<%--        <span class="navbar-toggler-icon"></span>--%>
-<%--    </button>--%>
-<%--    <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">--%>
-<%--    <div class="navbar-nav">--%>
-<%--        <div class="nav-item text-nowrap">--%>
-<%--            <a class="nav-link px-3" href="#">Wyloguj</a>--%>
-<%--        </div>--%>
-<%--    </div>--%>
-<%--</header>--%>
-
-<%--<div class="container-fluid">--%>
-<%--    <table border="1">--%>
-<%--        <tr>--%>
-<%--            <th>Id</th>--%>
-<%--            <th>Przyjęcie zlecenia</th>--%>
-<%--            <th>Data zakończenia zlecenia</th>--%>
-<%--            <th>Opis</th>--%>
-<%--            <th>Pojazd</th>--%>
-<%--            <th>Opcje</th>--%>
-<%--        </tr>--%>
-<%--        <c:forEach items="${taskList}" var="task">--%>
-<%--            <tr>--%>
-<%--                <td>${task.id}</td>--%>
-<%--                <td>${task.registrationDate}</td>--%>
-<%--                <td>${task.dateRepair}</td>--%>
-<%--                <td>${task.desctription}</td>--%>
-<%--                <td>${task.vehicle.producent} ${task.vehicle.model}</td>--%>
-<%--                <td>--%>
-<%--                    <a href="/task/edit?id=${task.id}"><button>Edytuj</button></a>--%>
-<%--                    <a href="/task/delete?id=${task.id}"><button>Usuń</button></a>--%>
-<%--                </td>--%>
-<%--            </tr>--%>
-<%--        </c:forEach>--%>
-<%--    </table>--%>
-<%--    <a href="/task/add"><button>Dodaj zlecenie</button></a>--%>
-<%--</div>--%>
-<%--</body>--%>
-<%--</html>--%>
-
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <html lang="pl">
 <head>
-    <title>Zlecenia</title>
+    <title>Pracownicy</title>
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/dashboard/">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
@@ -112,7 +56,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/employee">
+                        <a class="nav-link" href="#">
                             <span data-feather="file"></span>
                             Pracownicy
                         </a>
@@ -134,36 +78,36 @@
                 </div>
             </div>
 
-            <h2>Zlecenia</h2>
+            <h2>Pracownicy</h2>
             <div class="table-responsive">
                 <table class="table table-striped table-sm">
                     <thead>
                     <tr>
                         <th scope="col">Id</th>
-                        <th scope="col">Przyjęcie zlecenia</th>
-                        <th scope="col">Data zakończenia zlecenia</th>
-                        <th scope="col">Opis zlecenia</th>
-                        <th scope="col">Pojazd</th>
+                        <th scope="col">Imię</th>
+                        <th scope="col">Nazwisko</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Telefon</th>
                         <th scope="col">Opcje</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <c:forEach items="${taskList}" var="task">
+                    <c:forEach items="${employees}" var="emp">
                         <tr>
-                            <td>${task.id}</td>
-                            <td>${task.registrationDate}</td>
-                            <td>${task.dateRepair}</td>
-                            <td>${task.desctription}</td>
-                            <td>${task.vehicle.producent} ${task.vehicle.model}</td>
+                            <td>${emp.id}</td>
+                            <td>${emp.firstName}</td>
+                            <td>${emp.lastName}</td>
+                            <td>${emp.email}</td>
+                            <td>${emp.phoneNumber}</td>
                             <td>
-                                <a href="/task/edit?id=${task.id}" class="btn btn-dark" role="button">Edytuj</a>
-                                <a href="/task/delete?id=${task.id}" class="btn btn-danger" role="button">Usuń</a>
+                                <a href="/user/edit?id=${emp.id}" class="btn btn-dark" role="button">Edytuj</a>
+                                <a href="/user/delete?id=${emp.id}" class="btn btn-danger" role="button">Usuń</a>
                             </td>
                         </tr>
                     </c:forEach>
                     </tbody>
                 </table>
-                <a href="/task/add" class="btn btn-primary" role="button">Dodaj zlecenie </a>
+                <a href="/user/add" class="btn btn-primary" role="button">Dodaj pracownika </a>
             </div>
         </main>
     </div>
