@@ -33,6 +33,8 @@ public class TaskController {
         model.addAttribute("task", new Task());
         model.addAttribute("vehicles", vehicleService.getListOfVehicles());
         model.addAttribute("vehicleNames", vehicleService.getVehicleNames());
+        String today = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+        model.addAttribute("date", today);
         return "task/addForm";
     }
 
@@ -56,6 +58,7 @@ public class TaskController {
     @GetMapping("/edit")
     public String prepareEditTask(Long id, Model model){
         model.addAttribute("task", taskService.getTask(id));
+        model.addAttribute("vehicles", vehicleService.getListOfVehicles());
         return "task/editForm";
     }
 

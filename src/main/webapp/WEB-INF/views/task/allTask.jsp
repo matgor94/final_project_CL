@@ -1,59 +1,3 @@
-<%--<%@ page contentType="text/html;charset=UTF-8" %>--%>
-<%--<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>--%>
-<%--<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>--%>
-<%--<html>--%>
-<%--<head>--%>
-<%--    <title>Zlecenia</title>--%>
-<%--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">--%>
-<%--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>--%>
-<%--    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>--%>
-<%--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>--%>
-
-<%--</head>--%>
-<%--<body>--%>
-
-<%--<header class="navbar navbar-blue sticky-top bg-dark flex-md-nowrap p-0 shadow">--%>
-<%--    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Automotive workshop</a>--%>
-<%--    <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">--%>
-<%--        <span class="navbar-toggler-icon"></span>--%>
-<%--    </button>--%>
-<%--    <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">--%>
-<%--    <div class="navbar-nav">--%>
-<%--        <div class="nav-item text-nowrap">--%>
-<%--            <a class="nav-link px-3" href="#">Wyloguj</a>--%>
-<%--        </div>--%>
-<%--    </div>--%>
-<%--</header>--%>
-
-<%--<div class="container-fluid">--%>
-<%--    <table border="1">--%>
-<%--        <tr>--%>
-<%--            <th>Id</th>--%>
-<%--            <th>Przyjęcie zlecenia</th>--%>
-<%--            <th>Data zakończenia zlecenia</th>--%>
-<%--            <th>Opis</th>--%>
-<%--            <th>Pojazd</th>--%>
-<%--            <th>Opcje</th>--%>
-<%--        </tr>--%>
-<%--        <c:forEach items="${taskList}" var="task">--%>
-<%--            <tr>--%>
-<%--                <td>${task.id}</td>--%>
-<%--                <td>${task.registrationDate}</td>--%>
-<%--                <td>${task.dateRepair}</td>--%>
-<%--                <td>${task.desctription}</td>--%>
-<%--                <td>${task.vehicle.producent} ${task.vehicle.model}</td>--%>
-<%--                <td>--%>
-<%--                    <a href="/task/edit?id=${task.id}"><button>Edytuj</button></a>--%>
-<%--                    <a href="/task/delete?id=${task.id}"><button>Usuń</button></a>--%>
-<%--                </td>--%>
-<%--            </tr>--%>
-<%--        </c:forEach>--%>
-<%--    </table>--%>
-<%--    <a href="/task/add"><button>Dodaj zlecenie</button></a>--%>
-<%--</div>--%>
-<%--</body>--%>
-<%--</html>--%>
-
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
@@ -92,7 +36,7 @@
 <body>
 
 <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Warsztat motoryzacyjny</a>
+    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3">Warsztat motoryzacyjny</a>
     <div class="navbar-nav">
         <div class="nav-item text-nowrap">
             <a class="nav-link px-3" href="#">Wyloguj</a>
