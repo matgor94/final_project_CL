@@ -74,24 +74,23 @@
 </header>
 <div class="container" align="center">
 
-    <form:form method="post" modelAttribute="task" cssClass="col-form-label">
-<%--        <c:url var="edit_url" value="/task/edit"/>--%>
+    <form:form method="post" modelAttribute="task">
         <form:hidden path="id"/>
-        <div class="form-group">
-            <label>Data przyjęcia</label>
-            <form:input type="date" path="registrationDate" placeholder="Data przyjęcia"/>
+        <div class="mb-3">
+            <label><b>Data przyjęcia</b></label>
+            <form:input type="date" path="registrationDate" placeholder="Data przyjęcia" class="form-control"/>
         </div>
-        <div class="form-group">
-            <label>Data naprawy</label>
-            <form:input type="date" path="dateRepair" placeholder="Data naprawy"/>
+        <div class="mb-3">
+            <label><b>Data naprawy</b></label>
+            <form:input type="date" path="dateRepair" placeholder="Data naprawy" class="form-control"/>
         </div>
-        <div class="form-group">
-            <label>Opis zlecenia</label>
-            <form:textarea path="desctription" placeholder="Opis zlecenia"/>
+        <div class="mb-3">
+            <label><b>Opis zlecenia</b></label>
+            <form:textarea path="desctription" placeholder="Opis zlecenia" class="form-control"/>
         </div>
-        <div class="form-group">
-            <label>Pojazd</label>
-            <form:select path="vehicle" items="${vehicles}" placeholder="Pojazd" itemValue="id" itemLabel="model"/>
+        <div class="mb-3">
+            <label><b>Pojazd</b></label>
+            <form:select path="vehicle" items="${vehicles}" placeholder="Pojazd" itemValue="id" itemLabel="model" class="form-control"/>
         </div>
         <button type="submit" class="btn-primary">Zapisz zlecenie</button>
     </form:form>

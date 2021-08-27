@@ -1,22 +1,3 @@
-<%--<%@ page contentType="text/html;charset=UTF-8" language="java" %>--%>
-<%--<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>--%>
-<%--<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>--%>
-<%--<html>--%>
-<%--<head>--%>
-<%--    <title>Dodaj zlecenie naprawy</title>--%>
-<%--</head>--%>
-<%--<body>--%>
-<%--<h1>Formularz dodawania zlecenia naprawy:</h1>--%>
-<%--<form:form method="post" modelAttribute="task"></br>--%>
-<%--    <form:input type="date" path="registrationDate"  placeholder="Data przyjęcia"/></br>--%>
-<%--    <form:input type="date" path="dateRepair" placeholder="Termin naprawy"/></br>--%>
-<%--    <form:textarea path="desctription" placeholder="Opis zlecenia"/></br>--%>
-<%--    <form:select path="vehicle" items="${vehicles}" placeholder="Pojazd" itemValue="id" itemLabel="model"/></br>--%>
-<%--<input type="submit" value="Dodaj zlecenie">--%>
-<%--</form:form>--%>
-<%--</body>--%>
-<%--</html>--%>
-
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
@@ -65,22 +46,22 @@
 </header>
 <div class="container" align="center" >
 
-    <form:form method="post" modelAttribute="task" cssClass="col-form-label">
-            <div class="form-group">
+    <form:form method="post" modelAttribute="task">
+            <div class="mb-3">
                 <b><label>Data przyjęcia: </label></b>
-                    <form:input type="date" class="form-cntrol" path="registrationDate" id="registrationDate" placeholder="${date}"/>
-            </div></br></br>
-        <div class="form-group">
+                    <form:input type="date" path="registrationDate" id="registrationDate" placeholder="Data przyjęcia" class="form-control"/>
+            </div>
+        <div class="mb-3">
             <b><label>Termin naprawy: </label> </b>
-            <form:input type="date" class="form-cntrol" path="dateRepair" id="dateRepair" placeholder="Termin naprawy"/>
-        </div></br></br>
-        <div class="form-group">
-            <b> <label>Opis zlecenia:</label></b></br>
-            <form:textarea path="desctription" placeholder="Opis zlecenia"/>
-        </div></br></br>
-        <div class="form-group">
+            <form:input type="date" path="dateRepair" id="dateRepair" placeholder="Termin naprawy" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <b> <label>Opis zlecenia:</label></b>
+            <form:textarea path="desctription" placeholder="Opis zlecenia" class="form-control"/>
+        </div>
+        <div class="mb-3">
             <b><label>Wybierz pojazd:</label>   </b>
-            <form:select path="vehicle" items="${vehicles}" placeholder="Pojazd" itemValue="id" itemLabel="model"/>
+            <form:select path="vehicle" items="${vehicles}" placeholder="Pojazd" itemValue="id" itemLabel="model" class="form-control"/>
         </div>
         <button type="submit" class="btn btn-primary">Dodaj</button>
     </form:form>
@@ -90,6 +71,7 @@
 <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
     <div class="col-md-4 d-flex align-items-center">
     <span class="text-muted">Mateusz Górczyński ${date} </span>
+    </div>
 </footer>
 </body>
 

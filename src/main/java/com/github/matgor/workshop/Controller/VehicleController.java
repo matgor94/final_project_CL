@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.validation.Valid;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 @Service
 @RequestMapping("/vehicle")
@@ -21,9 +24,15 @@ public class VehicleController {
         this.vehicleService = vehicleService;
     }
 
+    private static String time(){
+        String time = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+        return time;
+    }
     @RequestMapping(value = "/add", method = RequestMethod.GET)
     public String prepareAddVehicle(Model model){
+        String time = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
         model.addAttribute("vehicle", new Vehicle());
+        model.addAttribute("time", time);
         return "vehicle/addForm";
     }
 
@@ -38,6 +47,9 @@ public class VehicleController {
 
     @GetMapping("/all")
     public String showAllVehicles(Model model){
+        String time = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+//        model.addAttribute("time", time);
+        model.addAttribute("time", LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
         model.addAttribute("vehiclesList", vehicleService.getListOfVehicles());
         return "vehicle/allVehicles";
     }
@@ -45,6 +57,7 @@ public class VehicleController {
     @GetMapping("edit")
     public String prepareEditVehicle(Long id, Model model){
         model.addAttribute("vehicle", vehicleService.getVehicle(id));
+        model.addAttribute("time", time()); 
         return "vehicle/editForm";
     }
 
