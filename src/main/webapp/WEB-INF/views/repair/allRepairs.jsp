@@ -1,33 +1,197 @@
+<%--<%@ page contentType="text/html;charset=UTF-8" %>--%>
+<%--<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>--%>
+<%--<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>--%>
+<%--<html>--%>
+<%--<head>--%>
+<%--    <title>Naprawy</title>--%>
+<%--</head>--%>
+<%--<body>--%>
+<%--<div>--%>
+<%--    <table border="1">--%>
+<%--        <tr>--%>
+<%--            <th>Id</th>--%>
+<%--            <th>Koszt części</th>--%>
+<%--            <th>Koszt robocizny</th>--%>
+<%--            <th>Zlecnie</th>--%>
+<%--        </tr>--%>
+<%--        <c:forEach items="${repairList}" var="repair">--%>
+<%--            <tr>--%>
+<%--                <td>${repair.id}</td>--%>
+<%--                <td>${repair.partsCost}</td>--%>
+<%--                <td>${repair.jobCost}</td>--%>
+<%--                <td>${repair.task.id}</td>--%>
+<%--                <td>--%>
+<%--                    <a href="/repair/edit?id=${repair.id}"><button>Edytuj</button></a>--%>
+<%--                    <a href="/repair/delete?id=${repair.id}"><button>Usuń</button></a>--%>
+<%--                </td>--%>
+<%--            </tr>--%>
+<%--        </c:forEach>--%>
+<%--    </table>--%>
+<%--    <a href="/repair/add"><button>Dodaj naprawę</button></a>--%>
+<%--</div>--%>
+<%--</body>--%>
+<%--</html>--%>
+
+<%--<%@ page contentType="text/html;charset=UTF-8" %>--%>
+<%--<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>--%>
+<%--<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>--%>
+<%--<html>--%>
+<%--<head>--%>
+<%--    <title>Pojazdy</title>--%>
+<%--</head>--%>
+<%--<body>--%>
+<%--<div>--%>
+<%--    <table border="1">--%>
+<%--        <tr>--%>
+<%--            <th>Id</th>--%>
+<%--            <th>Marka</th>--%>
+<%--            <th>Model</th>--%>
+<%--            <th>Rok produkcji</th>--%>
+<%--            <th>Przebieg (km)</th>--%>
+<%--            <th>Pojemność</th>--%>
+<%--            <th>Opcje</th>--%>
+<%--        </tr>--%>
+<%--        <c:forEach items="${vehiclesList}" var="vehicle">--%>
+<%--            <tr>--%>
+<%--                <td>${vehicle.id}</td>--%>
+<%--                <td>${vehicle.producent}</td>--%>
+<%--                <td>${vehicle.model}</td>--%>
+<%--                <td>${vehicle.yearOfProduction}</td>--%>
+<%--                <td>${vehicle.km}</td>--%>
+<%--                <td>${vehicle.capacity}</td>--%>
+<%--                <td>--%>
+<%--                    <a href=/vehicle/edit?id=${vehicle.id}><button>Edytuj</button></a>--%>
+<%--                    <a href=/vehicle/delete?id=${vehicle.id}><button>Usuń</button></a>--%>
+<%--                </td>--%>
+<%--            </tr>--%>
+<%--        </c:forEach>--%>
+<%--    </table>--%>
+<%--    <a href="/vehicle/add"><button>Dodaj nowy pojazd</button></a>--%>
+<%--</div>--%>
+<%--</body>--%>
+<%--</html>--%>
+
+
+
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-<html>
+<html lang="pl">
 <head>
-    <title>Naprawy</title>
+    <title>Lista napraw</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/dashboard/">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/src/main/webapp/resources/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+
+
+    <!-- Custom styles for this template -->
+    <link href="/src/main/webapp/resources/css/dashboard.css" rel="stylesheet">
 </head>
 <body>
-<div>
-    <table border="1">
-        <tr>
-            <th>Id</th>
-            <th>Koszt części</th>
-            <th>Koszt robocizny</th>
-            <th>Zlecnie</th>
-        </tr>
-        <c:forEach items="${repairList}" var="repair">
-            <tr>
-                <td>${repair.id}</td>
-                <td>${repair.partsCost}</td>
-                <td>${repair.jobCost}</td>
-                <td>${repair.task.id}</td>
-                <td>
-                    <a href="/repair/edit?id=${repair.id}"><button>Edytuj</button></a>
-                    <a href="/repair/delete?id=${repair.id}"><button>Usuń</button></a>
-                </td>
-            </tr>
-        </c:forEach>
-    </table>
-    <a href="/repair/add"><button>Dodaj naprawę</button></a>
+
+<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3">Warsztat motoryzacyjny - Lista napraw</a>
+    <div class="navbar-nav">
+        <div class="nav-item text-nowrap">
+            <a class="nav-link px-3" href="#">Wyloguj</a>
+        </div>
+    </div>
+</header>
+
+<div class="container-fluid">
+    <div class="row">
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+            <div class="position-sticky pt-3">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">
+                            <span data-feather="home"></span>
+                            Klienci
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/employee">
+                            <span data-feather="file"></span>
+                            Pracownicy
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/task/all">
+                            <span data-feather="shopping-cart"></span>
+                            Zlecenia
+                        </a>
+                </ul>
+            </div>
+        </nav>
+
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+
+                <div class="btn-toolbar mb-2 mb-md-0">
+                    </button>
+                </div>
+            </div>
+
+            <h2>Lista napraw</h2>
+            <div class="table-responsive">
+                <table class="table table-striped table-sm">
+                    <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Koszt części</th>
+                        <th scope="col">Koszt robocizny</th>
+                        <th scope="col">Zlecenie</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <c:forEach items="${repairList}" var="repair">
+                        <tr>
+                            <td>${repair.id}</td>
+                            <td>${repair.partsCost}</td>
+                            <td>${repair.jobCost}</td>
+                            <td>${repair.task.id}</td>
+                            <td>
+                                <a href="/repair/edit?id=${repair.id}" class="btn btn-dark" role="button">Edytuj</a>
+                                <a href="/repair/delete?id=${repair.id}" class="btn btn-danger" role="button">Usuń</a>
+                            </td>
+                        </tr>
+                    </c:forEach>
+                    </tbody>
+                </table>
+                <a href="/repair/add" class="btn btn-primary" role="button">Dodaj naprawę </a>
+            </div>
+        </main>
+    </div>
 </div>
+
+<script src="/src/main/webapp/resources/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="/src/main/webapp/resources/js/dashboard.js"></script>
+<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+    <div class="col-md-4 d-flex align-items-center">
+        <span class="text-muted">Mateusz Górczyński ${date}</span>
+    </div>
+</footer>
 </body>
+
 </html>

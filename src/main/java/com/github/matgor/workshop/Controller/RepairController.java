@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.validation.Valid;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 
 @Controller
@@ -58,6 +60,7 @@ public class RepairController {
     @GetMapping("/edit")
     public String preprareEditRepair(Long id, Model model){
         model.addAttribute("repair", repairService.getRepair(id));
+        model.addAttribute("tasks", taskService.getListOfTasks());
         return "repair/editForm";
     }
 

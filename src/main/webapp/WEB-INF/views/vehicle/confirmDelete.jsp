@@ -1,27 +1,9 @@
-<%--<%@ page isELIgnored="false" %>--%>
-<%--<%@ page contentType="text/html;charset=UTF-8" language="java" %>--%>
-<%--<!DOCTYPE html>--%>
-<%--<html>--%>
-<%--<head>--%>
-<%--    <title>Usuwanie pojazdu</title>--%>
-<%--</head>--%>
-<%--<body>--%>
-<%--<form method="post" action="">--%>
-<%--    <p>Czy usunąć pojazd ${vehicle.producent} ${vehicle.model})?</p>--%>
-<%--    <p>--%>
-<%--        <input type="hidden" name="id" value="${vehicle.id}"/>--%>
-<%--        <a href="/vehicle/all"><button>Nie</button></a>--%>
-<%--        <button type="submit">Tak</button>--%>
-<%--    </p>--%>
-<%--</form>--%>
-<%--</body>--%>
-<%--</html>--%>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <html lang="pl">
 <head>
-    <title>Usuwanie zlecenia</title>
+    <title>Usuwanie pojazdu</title>
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/dashboard/">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
