@@ -1,50 +1,9 @@
-<%--<%@ page contentType="text/html;charset=UTF-8" %>--%>
-<%--<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>--%>
-<%--<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>--%>
-<%--<html>--%>
-<%--<head>--%>
-<%--    <title>Pojazdy</title>--%>
-<%--</head>--%>
-<%--<body>--%>
-<%--<div>--%>
-<%--    <table border="1">--%>
-<%--        <tr>--%>
-<%--            <th>Id</th>--%>
-<%--            <th>Marka</th>--%>
-<%--            <th>Model</th>--%>
-<%--            <th>Rok produkcji</th>--%>
-<%--            <th>Przebieg (km)</th>--%>
-<%--            <th>Pojemność</th>--%>
-<%--            <th>Opcje</th>--%>
-<%--        </tr>--%>
-<%--        <c:forEach items="${vehiclesList}" var="vehicle">--%>
-<%--            <tr>--%>
-<%--                <td>${vehicle.id}</td>--%>
-<%--                <td>${vehicle.producent}</td>--%>
-<%--                <td>${vehicle.model}</td>--%>
-<%--                <td>${vehicle.yearOfProduction}</td>--%>
-<%--                <td>${vehicle.km}</td>--%>
-<%--                <td>${vehicle.capacity}</td>--%>
-<%--                <td>--%>
-<%--                    <a href=/vehicle/edit?id=${vehicle.id}><button>Edytuj</button></a>--%>
-<%--                    <a href=/vehicle/delete?id=${vehicle.id}><button>Usuń</button></a>--%>
-<%--                </td>--%>
-<%--            </tr>--%>
-<%--        </c:forEach>--%>
-<%--    </table>--%>
-<%--    <a href="/vehicle/add"><button>Dodaj nowy pojazd</button></a>--%>
-<%--</div>--%>
-<%--</body>--%>
-<%--</html>--%>
-
-
-
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <html lang="pl">
 <head>
-    <title>Lista pojazdów</title>
+    <title>Warsztat samochodowy - Lista pojazdów</title>
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/dashboard/">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
@@ -76,14 +35,7 @@
 </head>
 <body>
 
-<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3">Warsztat motoryzacyjny - Lista pojazdów</a>
-    <div class="navbar-nav">
-        <div class="nav-item text-nowrap">
-            <a class="nav-link px-3" href="#">Wyloguj</a>
-        </div>
-    </div>
-</header>
+<%@include file="../pageParts/header.jsp"%>
 
 <div class="container-fluid">
     <div class="row">
@@ -155,14 +107,8 @@
         </main>
     </div>
 </div>
+<%@include file="../pageParts/footer.jsp"%>
 
-<script src="/src/main/webapp/resources/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="/src/main/webapp/resources/js/dashboard.js"></script>
-<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-    <div class="col-md-4 d-flex align-items-center">
-        <span class="text-muted">Mateusz Górczyński ${time} </span>
-    </div>
-</footer>
 </body>
 
 </html>
