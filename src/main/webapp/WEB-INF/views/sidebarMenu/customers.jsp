@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <html lang="pl">
 <head>
-    <title>Zlecenia</title>
+    <title>Warsztat motoryzacyjny - Klienci</title>
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/dashboard/">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
@@ -36,7 +36,7 @@
 <body>
 
 <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3">Warsztat motoryzacyjny</a>
+    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" >Warsztat motoryzacyjny - Klienci</a>
     <div class="navbar-nav">
         <div class="nav-item text-nowrap">
             <a class="nav-link px-3" href="#">Wyloguj</a>
@@ -56,7 +56,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/employee">
+                        <a class="nav-link" href="#">
                             <span data-feather="file"></span>
                             Pracownicy
                         </a>
@@ -78,36 +78,36 @@
                 </div>
             </div>
 
-            <h2>Zlecenia</h2>
+            <h2>Pracownicy</h2>
             <div class="table-responsive">
                 <table class="table table-striped table-sm">
                     <thead>
                     <tr>
                         <th scope="col">Id</th>
-                        <th scope="col">Przyjęcie zlecenia</th>
-                        <th scope="col">Data zakończenia zlecenia</th>
-                        <th scope="col">Opis zlecenia</th>
-                        <th scope="col">Pojazd</th>
+                        <th scope="col">Imię</th>
+                        <th scope="col">Nazwisko</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Telefon</th>
                         <th scope="col">Opcje</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <c:forEach items="${taskList}" var="task">
+                    <c:forEach items="${customers}" var="customer">
                         <tr>
-                            <td>${task.id}</td>
-                            <td>${task.registrationDate}</td>
-                            <td>${task.dateRepair}</td>
-                            <td>${task.desctription}</td>
-                            <td>${task.vehicle.producent} ${task.vehicle.model}</td>
+                            <td>${customer.id}</td>
+                            <td>${customer.firstName}</td>
+                            <td>${customer.lastName}</td>
+                            <td>${customer.email}</td>
+                            <td>${customer.phoneNumber}</td>
                             <td>
-                                <a href="/task/edit?id=${task.id}" class="btn btn-dark" role="button">Edytuj</a>
-                                <a href="/task/delete?id=${task.id}" class="btn btn-danger" role="button">Usuń</a>
+                                <a href="/user/edit?id=${customer.id}" class="btn btn-dark" role="button">Edytuj</a>
+                                <a href="/user/delete?id=${customer.id}" class="btn btn-danger" role="button">Usuń</a>
                             </td>
                         </tr>
                     </c:forEach>
                     </tbody>
                 </table>
-                <a href="/task/add" class="btn btn-primary" role="button">Dodaj zlecenie </a>
+                <a href="/user/add" class="btn btn-primary" role="button">Dodaj klienta </a>
             </div>
         </main>
     </div>
@@ -117,7 +117,7 @@
 <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="/src/main/webapp/resources/js/dashboard.js"></script>
 <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
     <div class="col-md-4 d-flex align-items-center">
-        <span class="text-muted">Mateusz Górczyński ${time} </span>
+        <span class="text-muted">Mateusz Górczyński </span>
     </div>
 </footer>
 </body>

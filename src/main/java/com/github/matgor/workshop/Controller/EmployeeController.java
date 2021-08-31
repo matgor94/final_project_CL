@@ -19,7 +19,7 @@ public class EmployeeController {
     public EmployeeController(UserService userService) {
         this.userService = userService;
     }
-    @GetMapping("employee")
+    @GetMapping("/employee")
     public String onlyEmployees(Model model, Long id){
         List<User> allUser = userService.getListOfUsers();
         List<User> emplooyees = new ArrayList<>();
@@ -31,6 +31,6 @@ public class EmployeeController {
         String time = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
         model.addAttribute("time", time);
         model.addAttribute("employees", emplooyees);
-        return "user/employee";
+        return "sidebarMenu/employee";
     }
 }
