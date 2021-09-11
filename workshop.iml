@@ -136,5 +136,7 @@
     <orderEntry type="library" name="Maven: org.springframework.security:spring-security-web:5.4.6" level="project" />
     <orderEntry type="library" name="feather-icons" level="application" />
     <orderEntry type="library" name="chart.js" level="application" />
+    <orderEntry type="library" name="bootstrap" level="application" />
+    <orderEntry type="library" name="jquery-1.11.1" level="application" />
   </component>
 </module>
