@@ -42,13 +42,13 @@
             <div class="position-sticky pt-3">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">
+                        <a class="nav-link active" aria-current="page" href="/customers">
                             <span data-feather="home"></span>
                             Klienci
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="/employee">
                             <span data-feather="file"></span>
                             Pracownicy
                         </a>

@@ -49,7 +49,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="/employee">
                             <span data-feather="file"></span>
                             Pracownicy
                         </a>
@@ -100,13 +100,13 @@
                     </c:forEach>
                     </tbody>
                 </table>
-                <a href="/user/add" class="btn btn-primary" role="button">Dodaj klienta </a>
+                <a href="/user/addUser" class="btn btn-primary" role="button">Dodaj klienta </a>
             </div>
         </main>
     </div>
 </div>
 
-<%@include file="../pageParts/footer.jsp"%>
+<%@include file="/src/main/webapp/WEB-INF/views/pageParts/footer.jsp"%>
 
 </body>
 

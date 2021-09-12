@@ -104,6 +104,9 @@
                 <div class="form-group">
                     <label>Hasło</label>
                     <input type="password" class="form-control" placeholder="hasło" name="password" id="password" required="true">
+                    <div align="start">
+                        <input type="checkbox" onclick="showPassword()">Pokaż hasło
+                    </div>
                 </div>
                 <div>
                     <c:if test="${param.error != null}">
@@ -111,11 +114,24 @@
                     </c:if>
                 </div>
                 <input type="submit" class="btn btn-black" value="Zaloguj">
-<%--                <button type="submit" class="btn btn-black">Zaloguj</button>--%>
-                <button type="submit" class="btn btn-secondary">Zarejestruj</button>
+<%--                <button type="submit" href="/registration" class="btn btn-secondary">Zarejestruj</button>--%>
+<%--                <button type="submit" class="btn btn-secondary">Zarejestruj</button>--%>
             </form>
+<%--            <input type="button" value="Zarejestruj" href="/registration" class="btn btn-secondary">--%>
+            <a href="/registartion" class="btn btn-secondary">Zarejestruj</a>
         </div>
     </div>
 </div>
+<script>
+    function showPassword(){
+        var x = document.getElementById("pass");
+        if(x.type ==="password"){
+            x.type = "text";
+        }else {
+            x.type = "password"
+        }
+    }
+</script>
 </body>
+
 </html>
