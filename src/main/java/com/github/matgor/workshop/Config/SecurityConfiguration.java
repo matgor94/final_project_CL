@@ -49,14 +49,17 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
-                .loginPage("/login")
-                .usernameParameter("email")
-                .passwordParameter("password")
-                .defaultSuccessUrl("/task/all")
-                .permitAll()
-                .and()
+                    .loginPage("/login")
+                     .usernameParameter("email")
+                    .passwordParameter("password")
+                    .defaultSuccessUrl("/task/all")
+                    .permitAll()
+                    .and()
+                .logout()
+                    .logoutSuccessUrl("/login")
+                    .and()
                 .csrf()
-                .disable();
+                    .disable();
     }
 
     @Override
