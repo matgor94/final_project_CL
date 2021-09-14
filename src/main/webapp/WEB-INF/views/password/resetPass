@@ -4,7 +4,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html lang="pl">
 <head>
-    <title>Warsztat motoryzacyjny - Rejestracja </title>
+    <title>Warsztat motoryzacyjny - Resetowanie hasła </title>
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/dashboard/">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
@@ -33,17 +33,17 @@
     <link href="/src/main/webapp/resources/css/dashboard.css" rel="stylesheet">
 </head>
 <body>
-<%@include file="pageParts/header.jsp"%>
+<%@include file="../pageParts/header.jsp"%>
 <div class="px-4 py-5 my-5 text-center">
-    <h1 class="display-5 fw-bold">Rejestracja</h1>
+    <h1 class="display-5 fw-bold">Resetowanie hasła</h1>
     <div class="col-lg-6 mx-auto">
-        <p class="lead mb-4">Rejestracja jako klient czy pracownik?</p>
+        <p class="lead mb-4">Czy na pewno chcesz zresetować swoje dotychczasowe hasło?</p>
         <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-            <a href="/user/addUser" type="button" class="btn btn-primary btn-lg px-4 gap-3">Klient</a>
-            <a href="/user/addEmployee" type="button" class="btn btn-outline-secondary btn-lg px-4">Pracownik</a>
+            <a href="/reset_password/rand" type="button" class="btn btn-primary btn-lg px-4 gap-3">Tak</a>
+            <a href="/logout" type="button" class="btn btn-outline-secondary btn-lg px-4">Nie</a>
         </div>
     </div>
 </div>
-<%@include file="pageParts/footer.jsp"%>
+<%@include file="../pageParts/footer.jsp.jsp"%>
 </body>
 </html>

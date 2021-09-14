@@ -59,6 +59,13 @@
                             <span data-feather="shopping-cart"></span>
                             Zlecenia
                         </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/vehicles">
+                            <span data-feather="home"></span>
+                            Pojazdy
+                        </a>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -106,7 +113,7 @@
     </div>
 </div>
 
-<%@include file="/src/main/webapp/WEB-INF/views/pageParts/footer.jsp"%>
+<%@include file="../pageParts/footer.jsp"%>
 
 </body>
 

@@ -114,17 +114,15 @@
                     </c:if>
                 </div>
                 <input type="submit" class="btn btn-black" value="Zaloguj">
-<%--                <button type="submit" href="/registration" class="btn btn-secondary">Zarejestruj</button>--%>
-<%--                <button type="submit" class="btn btn-secondary">Zarejestruj</button>--%>
+                <a href="/registartion" class="btn btn-secondary">Zarejestruj</a>
             </form>
-<%--            <input type="button" value="Zarejestruj" href="/registration" class="btn btn-secondary">--%>
-            <a href="/registartion" class="btn btn-secondary">Zarejestruj</a>
+                <a href="#" >Zapomniałeś hasło?</a>
         </div>
     </div>
 </div>
 <script>
     function showPassword(){
-        var x = document.getElementById("pass");
+        var x = document.getElementById("password");
         if(x.type ==="password"){
             x.type = "text";
         }else {

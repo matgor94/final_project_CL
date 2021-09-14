@@ -53,6 +53,13 @@
                             <span data-feather="shopping-cart"></span>
                             Zlecenia
                         </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/vehicle/all">
+                            <span data-feather="home"></span>
+                            Pojazdy
+                        </a>
+                    </li>
                 </ul>
             </div>
         </nav>

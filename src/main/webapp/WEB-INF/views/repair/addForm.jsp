@@ -41,7 +41,7 @@
     <form:form method="post" modelAttribute="repair" >
         <div class="mb-3">
             <label> <b>Koszt części </b></label>
-            <form:input  path="partsCost" placeholder="Koszt części" class="form-control" />
+            <form:input path="partsCost" placeholder="Koszt części" class="form-control" />
         </div>
         <div class="mb-3">
             <label><b>Koszt robocizny</b></label>
