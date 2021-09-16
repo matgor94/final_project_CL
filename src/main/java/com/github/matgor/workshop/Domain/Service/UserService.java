@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -45,5 +46,8 @@ public class UserService {
    }
    public void deleteUser(User user){
        entityManager.remove(entityManager.contains(user) ? user : entityManager.merge(user));
+   }
+   public Optional<User> userByEmail(String email){
+      return userRepository.findUserByEmail(email);
    }
 }

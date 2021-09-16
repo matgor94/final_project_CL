@@ -43,7 +43,11 @@
     <form:form method="post" modelAttribute="user" >
         <div class="mb-3">
             <b><label>Email </label></b>
-            <form:input type="email" path="email" placeholder="email" id="email" class="form-control" />
+            <form:input type="email" path="email" placeholder="email" id="email" name="email" class="form-control" />
+        </div>
+        <div class="col-lg-6 mx-auto">
+            <p class="lead mb-4">Po zatwierdzeniu maila zostanie wysłane nowo wygenerowane hasło na podany email.
+            Zalecana jest zmiana wygenerowanego hasła</p>
         </div>
         <button type="submit" class="btn btn-primary">Zmień</button>
     </form:form>

@@ -116,7 +116,7 @@
                 <input type="submit" class="btn btn-black" value="Zaloguj">
                 <a href="/registartion" class="btn btn-secondary">Zarejestruj</a>
             </form>
-                <a href="#" >Zapomniałeś hasło?</a>
+                <a href="/reset_password" >Zapomniałeś hasło?</a>
         </div>
     </div>
 </div>
