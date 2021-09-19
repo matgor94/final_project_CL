@@ -26,7 +26,6 @@ public class VehicleController {
 
     @RequestMapping(value = "/add", method = RequestMethod.GET)
     public String prepareAddVehicle(Model model){
-        String time = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
         model.addAttribute("vehicle", new Vehicle());
         return "vehicle/addForm";
     }
@@ -42,7 +41,6 @@ public class VehicleController {
 
     @GetMapping("/all")
     public String showAllVehicles(Model model){
-        String time = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
         model.addAttribute("vehiclesList", vehicleService.getListOfVehicles());
         return "vehicle/allVehicles";
     }
