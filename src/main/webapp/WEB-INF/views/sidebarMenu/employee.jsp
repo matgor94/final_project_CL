@@ -60,7 +60,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/vehicles">
+                        <a class="nav-link active" aria-current="page" href="/vehicle/all">
                             <span data-feather="home"></span>
                             Pojazdy
                         </a>

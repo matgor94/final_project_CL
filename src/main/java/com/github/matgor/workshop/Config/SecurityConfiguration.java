@@ -30,25 +30,20 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
+                .antMatchers("/").permitAll()
                 .antMatchers("/user/addUser").permitAll()
                 .antMatchers("/user/addEmployee").permitAll()
-                .antMatchers("/user/addAdmin").permitAll()
-                .antMatchers("/automotive-workshop").permitAll()
+//                .antMatchers("/user/addAdmin").permitAll() nie ma sensu
                 .antMatchers("/registartion").permitAll()
-                .antMatchers("login").permitAll()
+                .antMatchers("/login").permitAll()
                 .antMatchers("/reset_password").permitAll()
-                .antMatchers("/reset_password/rand").permitAll()
-                .antMatchers("/reset_password/newpass").permitAll()
-                .antMatchers("/webapp/**").permitAll()
-                .antMatchers("/").permitAll()
+                .antMatchers("/reset_password/**").permitAll()
+                .antMatchers("/webapp/**").permitAll().antMatchers("/resources/static/css**", "/resources/static/js/**").permitAll()
                 .antMatchers("/employee").hasAnyRole("ADMIN", "EMPLOYEE")
-                .antMatchers("/user/edit", "/user/delete",
-                        "/vehicle/add", "/vehicle/edit", "/vehicle/delete"
-                ).hasAnyRole("ADMIN", "USER", "EMPLOYEE")
-                .antMatchers("/task/add", "/task/delete", "/task/edit").hasAnyRole("ADMIN", "USER")
-                .antMatchers("/vehicle/all", "/user/all", "/repair/all").hasRole("ADMIN")
+                .antMatchers("/user/edit", "/user/delete", "/vehicle/add", "/vehicle/edit", "/vehicle/delete").hasAnyRole("ADMIN", "USER", "EMPLOYEE")
+                .antMatchers("/task/add", "/task/delete", "/task/edit", "/vehicle/all").hasAnyRole("ADMIN", "USER")
+                .antMatchers( "/user/all", "/repair/all").hasRole("ADMIN")
                 .antMatchers("/repair/all", "/repair/add", "/repair/delete", "/repair/edit").hasAnyRole("ADMIN", "EMPLOYEE")
-                .antMatchers("/resources/static/css**", "/resources/static/js/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
