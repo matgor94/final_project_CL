@@ -7,7 +7,7 @@ Course finished in 11.07.2021 and I still working on this project.
 
 Im added a few new functionality, and I have a few more interesting ideas that I will try to implement in my project in the near future. 
 
-The project is not finished, it still needs some corrections.
+Project in basic form is finished. I plan working on this in future.
 
 This is a simple app which let to good organize job in workshop. We have options to testing app like Owner, Customer and Employee.
 
@@ -38,7 +38,7 @@ Kurs zakończył się 11.07.2021 lecz nadal pracuję nad projektem.
 
 Dodałem kilka nowych funkcjonalności i nadal mam kilka ciekawych pomysłów, które postaram się w niedalekiej przyszłości zrealizować.
 
-Projekt nie jest skończony, wymaga jeszcze kilku poprawek.
+Projekt w podstawowej formie jest gotowy, lecz planuję go rozwijać. 
 
 Jest to prosta aplikacja, która pozwala zorganizować pracę w warsztacie. Mamy opcje testowania aplikacji, jako Właściciel, Klient i Pracownik.
 
