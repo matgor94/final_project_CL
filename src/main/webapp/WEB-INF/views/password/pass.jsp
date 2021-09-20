@@ -37,16 +37,22 @@
 <div class="px-4 py-5 my-5 text-center">
     <h1 class="display-5 fw-bold">Resetowanie hasła</h1>
     <div class="col-lg-6 mx-auto">
-        <p class="lead mb-4">Wprowadź nowe hasło</p>
+        <p class="lead mb-4">Wprowadź email którego użyłeś przy rejestracji oraz nowe hasło </p>
     </div>
 </div>
+<div class="container" align="center">
 <form:form method="post" modelAttribute="password">
-    <div class="mb-3">
-        <b><label>Hasło </label></b>
+    <div class="form-group row">
+        <b><label class="col-sm-2 col-form-label">Email</label></b>
+        <form:input path="email" type="text" class="form-control" name="email" id="email" placeholder="email"/>
+    </div>
+    <div class="form-group row">
+        <b><label class="col-sm-2 col-form-label">Hasło </label></b>
         <form:input path="password" id="password" name="password" placeholder="Hasło" class="form-control"/>
     </div>
     <button type="submit" class="btn btn-primary">Zatwierdź</button>
 </form:form>
+</div>
 <%@include file="../pageParts/footer.jsp"%>>
 </body>
 </html>

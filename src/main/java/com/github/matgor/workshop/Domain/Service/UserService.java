@@ -48,6 +48,6 @@ public class UserService {
        entityManager.remove(entityManager.contains(user) ? user : entityManager.merge(user));
    }
    public Optional<User> userByEmail(String email){
-      return userRepository.findUserByEmail(email);
+       return userRepository.findUserByEmail(email);
    }
 }

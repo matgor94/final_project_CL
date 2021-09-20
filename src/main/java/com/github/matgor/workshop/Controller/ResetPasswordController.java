@@ -1,6 +1,7 @@
 package com.github.matgor.workshop.Controller;
 
 import com.github.matgor.workshop.Domain.Model.User;
+import com.github.matgor.workshop.Domain.Repository.UserRepository;
 import com.github.matgor.workshop.Domain.Service.EmailService;
 import com.github.matgor.workshop.Domain.Service.UserService;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -13,15 +14,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/reset_password")
-public class ResetPasswordController {
+public class ResetPasswordController{
     private final EmailService emailService;
     private final PasswordEncoder passwordEncoder;
     private final UserService userService;
 
-    public ResetPasswordController(EmailService emailService, PasswordEncoder passwordEncoder, UserService userService) {
+    public ResetPasswordController(EmailService emailService, PasswordEncoder passwordEncoder, UserService userService, UserRepository userRepository) {
         this.emailService = emailService;
         this.passwordEncoder = passwordEncoder;
         this.userService = userService;
@@ -37,6 +39,7 @@ public class ResetPasswordController {
         model.addAttribute("user", new User());
         return "password/info";
     }
+
 
     @RequestMapping(value = "/rand", method = RequestMethod.POST)
     public String changePasswordProcess(@RequestParam String email, Model model) {
@@ -54,8 +57,8 @@ public class ResetPasswordController {
         } else {
             return "password/error";
         }
-        ;
         model.addAttribute("email", email);
+
         return "redirect:/login";
     }
 
@@ -65,7 +68,11 @@ public class ResetPasswordController {
         return "password/pass";
     }
 
-    @RequestMapping(value = "/new", method = RequestMethod.POST)
-    public void newPassword(@RequestParam String password) {
+    @RequestMapping(value = "/newpass", method = RequestMethod.POST)
+    public String newPassword(@RequestParam String password, String email) {
+        User user = userService.userByEmail(email).orElseThrow();
+        user.setPassword(password);
+        userService.addUser(user);
+        return "redirect:/login";
     }
 }
