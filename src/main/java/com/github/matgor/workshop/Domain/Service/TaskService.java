@@ -1,6 +1,5 @@
 package com.github.matgor.workshop.Domain.Service;
 
-import com.github.matgor.workshop.Domain.Model.Repair;
 import com.github.matgor.workshop.Domain.Model.Task;
 import com.github.matgor.workshop.Domain.Repository.TaskRepository;
 import org.springframework.stereotype.Repository;
@@ -10,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
-import java.util.Optional;
+
 
 @Service
 @Repository
@@ -35,7 +34,7 @@ public class TaskService {
     }
     public List<Task> getListOfTasks(){
         return taskRepository.findAll();
-    };
+    }
 
     public Task editTask(Task task){
         return entityManager.merge(task);

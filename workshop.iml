@@ -7,8 +7,8 @@
           <root url="file://$MODULE_DIR$" relative="/" />
         </webroots>
         <sourceRoots>
-          <root url="file://$MODULE_DIR$/src/main/resources" />
           <root url="file://$MODULE_DIR$/src/main/java" />
+          <root url="file://$MODULE_DIR$/src/main/resources" />
         </sourceRoots>
       </configuration>
     </facet>
@@ -18,6 +18,7 @@
         <setting name="provider-name" value="Hibernate" />
         <datasource-mapping>
           <factory-entry name="entityManagerFactory" />
+          <factory-entry name="workshop" value="6c7eab9c-7715-4d9b-a39f-bf8a5f1852a0" />
         </datasource-mapping>
         <naming-strategy-map />
       </configuration>
@@ -26,7 +27,7 @@
       <configuration />
     </facet>
   </component>
-  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_11">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_15">
     <output url="file://$MODULE_DIR$/target/classes" />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
     <content url="file://$MODULE_DIR$">

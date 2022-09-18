@@ -18,7 +18,6 @@ public class WebConfig {
     }
     @Bean(name = "user")
     public User user(){
-        User user = new User();
-        return user;
+        return new User();
     }
 }

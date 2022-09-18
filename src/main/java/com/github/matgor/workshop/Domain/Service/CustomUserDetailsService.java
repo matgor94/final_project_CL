@@ -2,7 +2,6 @@ package com.github.matgor.workshop.Domain.Service;
 
 import com.github.matgor.workshop.Domain.Model.User;
 import com.github.matgor.workshop.Domain.Repository.UserRepository;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
