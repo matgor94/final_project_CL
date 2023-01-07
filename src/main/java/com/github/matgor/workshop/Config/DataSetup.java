@@ -16,7 +16,7 @@ import java.time.LocalDate;
 import java.util.concurrent.atomic.AtomicBoolean;
 @Component
 public class DataSetup {
-    private AtomicBoolean atomicBoolean = new AtomicBoolean(false);
+    private final AtomicBoolean atomicBoolean = new AtomicBoolean(false);
     private final VehicleRepository vehicleRepository;
     private final UserRepository userRepository;
     private final TaskRepository taskRepository;

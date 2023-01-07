@@ -57,7 +57,6 @@ public class ResetPasswordController{
             return "password/error";
         }
         model.addAttribute("email", email);
-
         return "redirect:/login";
     }
 

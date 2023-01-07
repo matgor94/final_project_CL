@@ -39,7 +39,7 @@ public class UserService {
     }
     public List<User> getListOfUsers(){
         return userRepository.findAll();
-    };
+    }
 
    public User editUser(User user){
        return entityManager.merge(user);

@@ -32,11 +32,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/").permitAll()
                 .antMatchers("/user/addUser").permitAll()
                 .antMatchers("/user/addEmployee").permitAll()
-//                .antMatchers("/user/addAdmin").permitAll() nie ma sensu
                 .antMatchers("/registartion").permitAll()
                 .antMatchers("/login").permitAll()
                 .antMatchers("/reset_password").permitAll()
                 .antMatchers("/reset_password/**").permitAll()
+                .antMatchers("/vehicles").hasAnyRole("USER", "ADMIN")
                 .antMatchers("/webapp/**").permitAll().antMatchers("/resources/static/css**", "/resources/static/js/**").permitAll()
                 .antMatchers("/employee").hasAnyRole("ADMIN", "EMPLOYEE")
                 .antMatchers("/user/edit", "/user/delete", "/vehicle/add", "/vehicle/edit", "/vehicle/delete").hasAnyRole("ADMIN", "USER", "EMPLOYEE")

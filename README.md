@@ -32,7 +32,7 @@ In project i used:
 
 PL
 
-Projekt wyknałem na zakończenie kursu Java Developer organizowany przez CodersLab. 
+Projekt wyknałem na zakończenie kursu Java Developer organizowany przez CodersLab oraz jako część praktyczna pracy Inżynierskiej. 
 
 Kurs zakończył się 11.07.2021 lecz nadal pracuję nad projektem.
 
