@@ -104,7 +104,7 @@
                     </c:forEach>
                     </tbody>
                 </table>
-                <a href="/user/addUser" class="btn btn-primary" role="button">Dodaj użytkownika </a>
+                <a href="/user/addEmployee" class="btn btn-primary" role="button">Dodaj użytkownika </a>
             </div>
         </main>
     </div>

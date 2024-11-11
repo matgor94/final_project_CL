@@ -78,7 +78,7 @@
                 </div>
             </div>
 
-            <h2>Pracownicy</h2>
+            <h2></h2>
             <div class="table-responsive">
                 <table class="table table-striped table-sm">
                     <thead>
